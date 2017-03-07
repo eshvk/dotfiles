@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh configuration.
 # ZSH=$HOME/.oh-my-zsh
-ZSH=$HOME/.dotfiles/zsh/omz
+ZSH=$HOME/workspace/.dotfiles/zsh/omz
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -89,7 +89,7 @@ source $HOME/.dotfiles/zsh/sinisa.zsh-theme
 source $HOME/.dotfiles/zsh/zshrc
 
 # added by travis gem
-[ -f /home/neville/.travis/travis.sh ] && source /home/neville/.travis/travis.sh
+# [ -f /home/neville/.travis/travis.sh ] && source /home/neville/.travis/travis.sh
 
 # zsh-syntax-highlighting
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=yellow'
