@@ -1,6 +1,6 @@
 [user]
-	name = Neville Li
-	email = neville@spotify.com
+	name = Esh
+	email = esh@eshvk.me
 [color]
 	ui = auto
 [core]
@@ -9,8 +9,9 @@
 	excludesfile = ~/.dotfiles/git/gitignore
 [branch]
 	autosetuprebase = always
-[url "neville@git.spotify.net"]
-	insteadof = git@git.spotify.net
+# No idea what this does
+#[url "neville@git.spotify.net"]
+#	insteadof = git@git.spotify.net
 [push]
 	default = tracking
 [merge]
@@ -24,12 +25,12 @@
 	l2 = log --format='%C(yellow)commit %H%C(reset)%C(red bold)%d%C(reset)%nAuthor: %C(cyan)%an <%ae>%C(reset)%nDate:   %C(green)%cd%C(reset)%n%n%w(,4,4)%s%n' --date=local
 	l3 = log --format='%C(yellow)commit %H%C(reset)%C(red bold)%d%C(reset)%nAuthor: %C(cyan)%an <%ae>%C(reset)%nDate:   %C(green)%cd%C(reset)%n%n%w(,4,4)%B' --date=local
 	lg = log --format='%C(yellow)%h%C(reset) -%C(red bold)%d%C(reset) %s %C(green)(%cr) %C(cyan)<%an>%C(reset)' --graph
-	lm = log --format='%C(yellow)%h%C(reset) -%C(red bold)%d%C(reset) %s %C(green)(%cr)%C(reset)' --author=neville
+	lm = log --format='%C(yellow)%h%C(reset) -%C(red bold)%d%C(reset) %s %C(green)(%cr)%C(reset)' --author=esh
 	pr = pull-request
 	rb = rebase
 	ri = rebase -i
 	rw = rewind
 	sh = show HEAD
 	st = status
-[hub]
-	host = ghe.spotify.net
+#[hub]
+#	host = ghe.spotify.net
