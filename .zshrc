@@ -6,8 +6,8 @@ ZSH=$HOME/.dotfiles/zsh/omz
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="robbyrussell"
-ZSH_THEME=""
+ZSH_THEME="robbyrussell"
+# ZSH_THEME=""
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -84,9 +84,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# My theme and settings
-source $HOME/.dotfiles/zsh/sinisa.zsh-theme
-source $HOME/.dotfiles/zsh/zshrc
+# My (neville) theme and settings
+# source $HOME/.dotfiles/zsh/sinisa.zsh-theme
+# source $HOME/.dotfiles/zsh/zshrc
 
 # added by travis gem
 # [ -f /home/neville/.travis/travis.sh ] && source /home/neville/.travis/travis.sh
