@@ -92,5 +92,6 @@ source $HOME/.dotfiles/zsh/zshrc
 # [ -f /home/neville/.travis/travis.sh ] && source /home/neville/.travis/travis.sh
 
 # zsh-syntax-highlighting
-ZSH_HIGHLIGHT_STYLES[globbing]='fg=yellow'
-ZSH_HIGHLIGHT_STYLES[path]='bold'
+# Turning off these because ZSH complains about associative arrays.
+# ZSH_HIGHLIGHT_STYLES[globbing]='fg=yellow'
+# ZSH_HIGHLIGHT_STYLES[path]='bold'
