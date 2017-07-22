@@ -56,6 +56,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# Miniconda Path
+export PATH=$HOME/miniconda3/bin:$PATH
+
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -86,7 +89,7 @@ source $ZSH/oh-my-zsh.sh
 
 # My (neville) theme and settings
 # source $HOME/.dotfiles/zsh/sinisa.zsh-theme
-# source $HOME/.dotfiles/zsh/zshrc
+source $HOME/.dotfiles/zsh/zshrc
 
 # added by travis gem
 # [ -f /home/neville/.travis/travis.sh ] && source /home/neville/.travis/travis.sh
