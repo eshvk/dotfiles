@@ -89,3 +89,6 @@ fi
 [[ -f /usr/local/bin/activate.sh ]] && source /usr/local/bin/activate.sh
 
 # vim: ft=zsh:
+
+# Code
+alias code='cd ${HOME}/workspace'
