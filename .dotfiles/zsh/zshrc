@@ -92,3 +92,6 @@ fi
 
 # Code
 alias code='cd ${HOME}/workspace'
+# Sublime
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+
