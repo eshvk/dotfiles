@@ -3,9 +3,10 @@
 	email = esh@eshvk.me
 [color]
 	ui = auto
+# autocrlf convert carriage return line feed which are windows line endings into line feed on input but not vice versa. This makes sense to me since I am mostly on OSX. The safecrlf is set to warn because that means it will not be irreversible conversion. I don't need it to fail on such a thing. I will keep the warning tho.
 [core]
 	autocrlf = input
-	safecrlf = true
+	safecrlf = warn
 	excludesfile = ~/.dotfiles/git/gitignore
 [branch]
 	autosetuprebase = always
