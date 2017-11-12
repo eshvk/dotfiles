@@ -12,8 +12,9 @@
 # No idea what this does
 #[url "neville@git.spotify.net"]
 #	insteadof = git@git.spotify.net
+# Default Push Behavior. Replaced from tracking/upstream to current. This means current branch will be automatically pushed to an upstream branch of the same nae. It assumes that this is the case.
 [push]
-	default = tracking
+	default = current
 [merge]
 	tool = vimdiff
 [alias]
