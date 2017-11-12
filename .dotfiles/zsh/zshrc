@@ -91,7 +91,7 @@ fi
 # vim: ft=zsh:
 
 # Code
-alias code='cd ${HOME}/workspace'
+alias work='cd ${HOME}/workspace'
 # Sublime
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
