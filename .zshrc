@@ -6,7 +6,8 @@ ZSH=$HOME/.dotfiles/zsh/omz
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+# From here https://gist.github.com/kevin-smets/8568070
+ZSH_THEME="powerlevel9k/powerlevel9k"
 # ZSH_THEME=""
 
 # Uncomment the following line to use case-sensitive completion.
