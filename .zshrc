@@ -49,7 +49,11 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man git lein mvn pep8 pip sbt scala vundle zsh-syntax-highlighting z)
+# Original list by Neville
+# plugins=(colored-man git lein mvn pep8 pip sbt scala vundle zsh-syntax-highlighting z)
+# Editing :Removing some plugins like lein mvn pep8 pip sbt scala vundle, want to remove 'z'
+# but no idea what it does, 
+plugins=(colored-man git zsh-syntax-highlighting zsh-autosuggestions z)
 [[ "$(uname)" == "Darwin" ]] && plugins=(brew osx ${plugins})
 
 [[ -d ${HOME}/bin ]] && export PATH=${HOME}/bin:${PATH}
