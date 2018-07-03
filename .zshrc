@@ -53,7 +53,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # plugins=(colored-man git lein mvn pep8 pip sbt scala vundle zsh-syntax-highlighting z)
 # Editing :Removing some plugins like lein mvn pep8 pip sbt scala vundle, want to remove 'z'
 # but no idea what it does, 
-plugins=(colored-man git zsh-syntax-highlighting zsh-autosuggestions z)
+plugins=(colored-man git osx zsh-syntax-highlighting zsh-autosuggestions z)
 [[ "$(uname)" == "Darwin" ]] && plugins=(brew osx ${plugins})
 
 [[ -d ${HOME}/bin ]] && export PATH=${HOME}/bin:${PATH}
