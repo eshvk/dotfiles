@@ -9,6 +9,8 @@ DEFAULT_USER=eshvk
 # time that oh-my-zsh is loaded.
 # From here https://gist.github.com/kevin-smets/8568070
 ZSH_THEME="powerlevel9k/powerlevel9k"
+# I installed `SourceCodePro+Powerline+Awesome`, this configures powerlevel9k to use that font
+POWERLEVEL9K_MODE='awesome-patched'
 # ZSH_THEME=""
 
 # Uncomment the following line to use case-sensitive completion.
