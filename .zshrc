@@ -11,6 +11,9 @@ DEFAULT_USER=eshvk
 ZSH_THEME="powerlevel9k/powerlevel9k"
 # I installed `SourceCodePro+Powerline+Awesome`, this configures powerlevel9k to use that font
 POWERLEVEL9K_MODE='awesome-patched'
+# Adding in conda environment
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir anaconda vcs)
+POWERLEVEL9K_PYTHON_ICON='\U1F40D'
 # ZSH_THEME=""
 
 # Uncomment the following line to use case-sensitive completion.
