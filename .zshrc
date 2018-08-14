@@ -8,7 +8,7 @@ DEFAULT_USER=`whoami`
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # From here https://gist.github.com/kevin-smets/8568070
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME=powerlevel9k/powerlevel9k
 # I installed `SourceCodePro+Powerline+Awesome`, this configures powerlevel9k to use that font
 POWERLEVEL9K_MODE='awesome-patched'
 # Adding in conda environment
@@ -49,7 +49,7 @@ POWERLEVEL9K_PYTHON_ICON='\U1F40D'
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=$HOME/.dotfiles/zsh/omz-custom
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/

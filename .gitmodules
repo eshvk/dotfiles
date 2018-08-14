@@ -1,3 +1,9 @@
 [submodule ".dotfiles/zsh/omz"]
 	path = .dotfiles/zsh/omz
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule ".dotfiles/zsh/powerlevel9k"]
+	path = .dotfiles/zsh/powerlevel9k
+	url = https://github.com/bhilburn/powerlevel9k.git
+[submodule ".dotfiles/zsh/omz-custom/themes/powerlevel9k"]
+	path = .dotfiles/zsh/omz-custom/themes/powerlevel9k
+	url = https://github.com/bhilburn/powerlevel9k.git
