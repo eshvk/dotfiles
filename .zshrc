@@ -8,8 +8,8 @@ DEFAULT_USER=`whoami`
 # time that oh-my-zsh is loaded.
 # From here https://gist.github.com/kevin-smets/8568070
 ZSH_THEME=powerlevel9k/powerlevel9k
-# I installed `SourceCodePro+Powerline+Awesome`, this configures powerlevel9k to use that font
-POWERLEVEL9K_MODE='awesome-patched'
+# I installed `Sauce Code Pro Nerd Font Complete, this configuration ensures that I use this font`
+POWERLEVEL9K_MODE='nerdfont-complete'
 # Adding in conda environment
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir anaconda vcs)
 # Adding snake icon for python
