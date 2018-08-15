@@ -1,5 +1,4 @@
 # Path to your oh-my-zsh configuration.
-# ZSH=$HOME/.oh-my-zsh
 ZSH=$HOME/.dotfiles/zsh/omz
 DEFAULT_USER=`whoami`
 
@@ -15,7 +14,6 @@ POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir anaconda vcs)
 # Adding snake icon for python
 POWERLEVEL9K_PYTHON_ICON='\U1F40D'
-# ZSH_THEME=""
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -59,7 +57,8 @@ ZSH_CUSTOM=$HOME/.dotfiles/zsh/omz-custom
 # plugins=(colored-man git lein mvn pep8 pip sbt scala vundle zsh-syntax-highlighting z)
 # Editing :Removing some plugins like lein mvn pep8 pip sbt scala vundle, want to remove 'z'
 # but no idea what it does, 
-plugins=(colored-man git osx zsh-syntax-highlighting zsh-autosuggestions z)
+# zsh syntax highlighting must be last plugin to be installed 
+plugins=(colored-man git osx zsh-autosuggestions z zsh-syntax-highlighting)
 [[ "$(uname)" == "Darwin" ]] && plugins=(brew osx ${plugins})
 
 [[ -d ${HOME}/bin ]] && export PATH=${HOME}/bin:${PATH}
@@ -99,14 +98,6 @@ export PATH=$HOME/miniconda3/bin:$PATH
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# My (neville) theme and settings
-# source $HOME/.dotfiles/zsh/sinisa.zsh-theme
+# Neville settings
 source $HOME/.dotfiles/zsh/zshrc
 
-# added by travis gem
-# [ -f /home/neville/.travis/travis.sh ] && source /home/neville/.travis/travis.sh
-
-# zsh-syntax-highlighting
-# Turning off these because ZSH complains about associative arrays.
-# ZSH_HIGHLIGHT_STYLES[globbing]='fg=yellow'
-# ZSH_HIGHLIGHT_STYLES[path]='bold'
