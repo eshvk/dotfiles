@@ -12,6 +12,11 @@ ZSH_THEME=powerlevel9k/powerlevel9k
 POWERLEVEL9K_MODE='nerdfont-complete'
 # Adding in conda environment
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir anaconda vcs)
+# Adding in command execution time
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator background_jobs history time)
+# Always display command execution time
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
+
 # Adding snake icon for python
 POWERLEVEL9K_PYTHON_ICON='\U1F40D'
 
