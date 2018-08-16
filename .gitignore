@@ -121,6 +121,7 @@ workspace
 .mozilla
 .mission-control
 .pki
+.pyo
 .pulse
 .pulse-cookie
 .recently-used.xbel
