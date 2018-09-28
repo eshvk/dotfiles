@@ -1,5 +1,5 @@
 [user]
-	name = Esh
+	name = eshvk
 	email = 807898+eshvk@users.noreply.github.com
 [color]
 	ui = auto
@@ -36,3 +36,5 @@
 	st = status
 #[hub]
 #	host = ghe.spotify.net
+[credential]
+        helper = osxkeychain
