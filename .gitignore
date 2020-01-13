@@ -3,6 +3,9 @@ bin
 dev
 src
 
+# Emacs
+elpa
+
 # Common
 Applications
 Desktop

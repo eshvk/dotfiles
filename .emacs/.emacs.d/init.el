@@ -35,3 +35,7 @@ There are two things you can do about this warning:
 (load-theme 'solarized-dark t)
 ; Enable Org mode
 (require 'org)
+; Set font
+(set-default-font "Menlo 18")
+; Make cursor to be a bar
+(setq-default cursor-type 'bar) 
