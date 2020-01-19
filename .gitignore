@@ -5,6 +5,7 @@ src
 
 # Emacs
 elpa
+.emacs/.emacs.d/auto-save-list
 
 # Common
 Applications

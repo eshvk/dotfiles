@@ -39,3 +39,6 @@ There are two things you can do about this warning:
 (set-default-font "Menlo 18")
 ; Make cursor to be a bar
 (setq-default cursor-type 'bar) 
+; Use left option key for mac and left option key for emacs
+(setq ns-option-modifier 'none
+      ns-right-alternate-modifier 'meta)
