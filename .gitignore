@@ -6,7 +6,11 @@ src
 # Emacs
 elpa
 .emacs/.emacs.d/auto-save-list
-
+.emacs.desktop
+*~
+.emacs/.emacs.d/url
+.emacs/.emacs.d/emojis
+.emacs/.emacs.d/bookmarks
 # Common
 Applications
 Desktop
