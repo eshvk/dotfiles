@@ -30,12 +30,18 @@ There are two things you can do about this warning:
  '(global-visual-line-mode t)
  '(package-selected-packages
    (quote
-	(spotlight neotree org-beautify-theme org-bullets doom-themes which-key helm undo-tree emojify))))
+	(company spotlight neotree org-beautify-theme org-bullets doom-themes which-key helm undo-tree emojify))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(doom-neotree-data-file-face ((t (:family "Source Sans Pro" :height 1.0 :foreground "#727280"))))
+ '(doom-neotree-dir-face ((t (:family "Source Sans Pro" :height 1.0))))
+ '(doom-neotree-file-face ((t (:family "Source Sans Pro" :height 1.0))))
+ '(doom-neotree-hidden-file-face ((t (:family "Source Sans Pro" :height 1.0 :foreground "#525254"))))
+ '(doom-neotree-media-file-face ((t (:family "Source Sans Pro" :height 1.0 :foreground "#66d9ef"))))
+ '(doom-neotree-text-file-face ((t (:family "Source Sans Pro" :height 1.0))))
  '(org-date ((t (:family "SauceCodePro Nerd Font" :height 0.8 :foreground "#bbb"))))
  '(org-document-info ((t (:height 1.2 :slant italic))))
  '(org-document-info-keyword ((t (:height 0.8 :foreground "#bbb"))))
@@ -55,6 +61,7 @@ There are two things you can do about this warning:
  '(org-link ((t (:foreground "#1c1e1f" :underline t))))
  '(org-list-dt ((t (:foreground "#1c1e1f"))))
  '(org-special-keyword ((t (:family "SauceCodePro Nerd Font" :height 0.8))))
+ '(org-tag ((t (:foreground "#727280"))))
  '(org-todo ((t (:family "SauceCodePro Nerd Font" :height 0.8 :weight normal :foreground "#1c1e1f"))))
  '(variable-pitch ((t (:family "EtBembo" :background nil :foreground "#1c1e1f" :height 1.7)))))
 (require 'all-the-icons) ;; all-the-icons
@@ -90,6 +97,9 @@ There are two things you can do about this warning:
 ;; First we make sure that everything is backed up somewhere else.
 ;; Then we make sure that it is easy to create a file backup anonymous
 ;; buffer, then we create a daily buffer.
+(desktop-save-mode 1) ; Save desktop
+(savehist-mode 1) ; Minibuffer history save
+(setq history-length t) ; Unlimited command history
 (let ((icloud "~/Library/Mobile Documents/com~apple~CloudDocs/")
       (Emacs-suffix "Emacs-Backups/")
       (EagleFiler-suffix "Documents/Files/@Write/"))
