@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (setq ring-bell-function 'ignore) ; Turn off bell
 ;; Use MELPA (a package manager)
 (require 'package)
@@ -30,7 +31,7 @@ There are two things you can do about this warning:
  '(global-visual-line-mode t)
  '(package-selected-packages
    (quote
-	(company spotlight neotree org-beautify-theme org-bullets doom-themes which-key helm undo-tree emojify))))
+	(aggressive-indent company spotlight neotree org-beautify-theme org-bullets doom-themes which-key helm undo-tree emojify))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -75,6 +76,7 @@ There are two things you can do about this warning:
          (setq word-wrap nil)
          (make-local-variable 'auto-hscroll-mode)
          (setq auto-hscroll-mode nil))))
+(add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode) ;; Indent shit https://github.com/Malabarba/aggressive-indent-mode
 ;; Doom Theme
 (require 'doom-themes)
 ;; Global settings (defaults)
@@ -83,9 +85,8 @@ There are two things you can do about this warning:
 (load-theme 'doom-solarized-light t)
 (doom-themes-org-config); Corrects (and improves) org-mode's native fontification.
 (doom-themes-neotree-config); requires neotree and all the icons
-;(set-default-font "ETBembo 16") ; Set font
-;(add-to-list 'default-frame-alist
-;	     '(font . "ETBembo 16")) ; Set Frame font
+
+(setq scroll-bar-mode nil) ; Bye bye scroll bar
 (setq-default cursor-type 'bar) ; Make cursor to be a bar
 ; Use left option key for mac and left option key for emacs
 ;(setq ns-option-modifier 'meta
@@ -93,10 +94,14 @@ There are two things you can do about this warning:
 (setq inhibit-startup-screen t) ; Disable the stupid splash screen
 (add-to-list 'default-frame-alist '(fullscreen . maximized)) ; Apparentlty sets initial frame size big.
 (add-hook 'after-init-hook #'global-emojify-mode); Set emojify mode for all buffers
+(add-hook 'after-init-hook 'global-company-mode) ; Enable company mode in all backends.
+(setq company-idle-delay 0.1)
 ;; Sublime-Text and Apple-Inbox Replication
 ;; First we make sure that everything is backed up somewhere else.
 ;; Then we make sure that it is easy to create a file backup anonymous
 ;; buffer, then we create a daily buffer.
+(define-key (current-global-map) (kbd "C-c u") ;; I need my £
+				(lookup-key key-translation-map (kbd "C-x 8")))
 (desktop-save-mode 1) ; Save desktop
 (savehist-mode 1) ; Minibuffer history save
 (setq history-length t) ; Unlimited command history
@@ -110,8 +115,7 @@ There are two things you can do about this warning:
         kept-old-versions 0 ;; Number of oldest versions to keep.
         delete-old-versions t ;; Don't ask to delete excess backup versions.
         backup-by-copying t ;; Copy all files, don't rename them. Maybe needed to preserve finder tags.
-        backup-directory-alist `(("" . ,Emacs-Backups))
-       )
+        backup-directory-alist `(("" . ,Emacs-Backups)))
       (defun now-buffer ()
         "Create a new empty file backed buffer with a timestamp name."
         (interactive)
@@ -136,6 +140,7 @@ There are two things you can do about this warning:
   (set-window-buffer nil (current-buffer))))) ; In theory this centers shit
 (add-hook 'org-mode-hook (lambda () (setq mouse-highlight nil)))
 (setq-default org-display-custom-times t) ; time stamps
+(setq org-use-speed-commands t) ; Activate speed commands
 (setq org-ellipsis "⤶" ; folding symbol
  org-bullets-bullet-list '(" ") ; no bullets
  org-fontify-whole-heading-line t ; Whole heading diff face
@@ -144,11 +149,13 @@ There are two things you can do about this warning:
  org-time-stamp-custom-formats '("<%a W%V-%Y>" . "<%a W%V-%Y %H:%M>") ; Week View
  org-startup-indented t; Hopefully ensures that I have indentation.
  org-todo-keywords
-	  '((sequence "Next-Action" "W" "|" "FIN" "DEP")); Use my keywords
+	  '((sequence "Next-Action(t)" "W(w)" "|" "FIN(f)" "DEP(d)" "ND(n)")); Use my keywords
  org-log-done 'time; Timestamp in done
  org-hide-emphasis-markers t; Hides the emphasis delimiters */
  org-pretty-entities t; Converts \alpha into unicode
- org-odd-levels-only t; IDK what this does.
+ org-odd-levels-only t; This means that each heading will have odd number of stars and odd number of spaces, IDK how this is useful.
+ org-loop-over-headlines-in-active-region t; I believe this should ensure that I can select a bunch of things and do the same thing to them.
+ org-tags-column 0; keep tags next to headings
  )
 (let  ((bg-white           "#fbf8ef")
   (bg-dark            "#1c1e1f")
@@ -160,13 +167,14 @@ There are two things you can do about this warning:
  (sans-mono-font     "SauceCodePro Nerd Font")
  (sans-font          "Source Sans Pro")
  (et-font            "EtBembo")
- (slate              "#8FA1B3"))
+ (slate              "#8FA1B3")
+ (hide-flag              1))
 (custom-theme-set-faces 'user
    `(variable-pitch
    ((t (:family ,et-font
             :background nil
             :foreground ,bg-dark
-            :height 1.7))))
+            :height 1.7)))) ; Rogue had this set to 1.7
      `(doom-neotree-dir-face
    ((t (:family ,sans-font
             :height 1.0))))
@@ -251,8 +259,14 @@ There are two things you can do about this warning:
    )
   `(org-tag ((t (:foreground ,doc))))
   `(org-list-dt
-  ((t ( :foreground ,bg-dark))))
-      ))
+	((t ( :foreground ,bg-dark)))))
+(defun org-hide-tags ()
+  (interactive)
+  (setq hide-flag (% (+ 1 hide-flag) 2))
+  (if (eq 1 hide-flag)
+	(custom-theme-set-faces 'user `(org-tag ((t (:foreground ,bg-white)))))
+	(custom-theme-set-faces 'user `(org-tag ((t (:foreground ,doc))))))))
+
 ;; Undo tree
 (global-undo-tree-mode)
 (setq-default tab-width 4) ; Set Tab to appear like 4 spaces in Emacs
